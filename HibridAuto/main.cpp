@@ -1,15 +1,14 @@
 #include "BenzinesAuto.h"
 #include "HibridAuto.h"
+#include "AutoKolcsonzo.h"
 
 #include <iostream>
 #include <locale>
 
 using namespace std;
 
-int main()
+void main_f1()
 {
-	setlocale(LC_ALL, "");
-
 	BenzinesAuto* a;
 
 	//Benzines ctor
@@ -55,6 +54,36 @@ int main()
 
 		delete a;
 	}
+}
+
+void main_f2()
+{
+	AutoKolcsonzo k(5);
+
+	BenzinesAuto b1("Benzines #1", 30, 1);
+	k += b1;
+
+	HibridAuto h1("Hibrid #1", 30, 1, 50, false);
+	k += h1;
+
+	HibridAuto h2("Hibrid #2", 100, 2, 20, false);
+	k += h2;
+
+	BenzinesAuto* kolcson = k[1];
+	cout << "1. indexû autó kölcsönzése: " << (kolcson == NULL ? "nem" : "") << " sikeres" << endl;
+
+	BenzinesAuto* kolcson2 = k[4];
+	cout << "4. indexû autó kölcsönzése: " << (kolcson2 == NULL ? "nem" : "") << " sikeres" << endl;
+
+	cout << k;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "");
+
+	//main_f1();
+	main_f2();
 
 	system("pause");
 

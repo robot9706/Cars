@@ -142,10 +142,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AutoKolcsonzo.h" />
     <ClInclude Include="BenzinesAuto.h" />
     <ClInclude Include="HibridAuto.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AutoKolcsonzo.cpp" />
     <ClCompile Include="BenzinesAuto.cpp" />
     <ClCompile Include="HibridAuto.cpp" />
     <ClCompile Include="main.cpp" />
