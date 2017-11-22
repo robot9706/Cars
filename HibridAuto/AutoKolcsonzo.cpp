@@ -54,11 +54,6 @@ AutoKolcsonzo::AutoKolcsonzo(AutoKolcsonzo& k)
 		_autok[x] = k._autok[x];
 }
 
-AutoKolcsonzo::~AutoKolcsonzo()
-{
-	delete[] _autok;
-}
-
 ostream& operator<<(ostream& os, AutoKolcsonzo & t)
 {
 	int count = 0;
@@ -81,4 +76,9 @@ ostream& operator<<(ostream& os, AutoKolcsonzo & t)
 	}
 
 	return os;
+}
+
+AutoKolcsonzo::~AutoKolcsonzo()
+{
+	delete[] _autok;
 }
